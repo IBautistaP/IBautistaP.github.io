@@ -43,7 +43,7 @@ function playStream(idVideoTag, stream) {
 // });
 
 var peer = new Peer({
-    key: "peerjs",
+    //   key: "peerjs",
     host: "9000-da81e955-7114-46f0-840f-ae25b4d1ce1f.ws-us02.gitpod.io/",
     secure: true,
     port: 443
