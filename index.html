@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <title>Khoa Pham WebRTC</title>
+    <script src="jquery.js"></script>
+    <script src="https://unpkg.com/peerjs@1.2.0/dist/peerjs.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@tensorflow/tfjs/dist/tf.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/socket.io/2.3.0/socket.io.js"></script>
+    <!-- <script src="peer.js"></script> -->
+</head>
+
+<body>
+    <div id="div-chat">
+        <p>Online user:</p>
+        <ul id="ulUSer"></ul>
+        <h3 id="my-peer"><span> Your Id: </span></h3>
+        <video id="localStream" width="300" controls></video>
+        <br /><br />
+        <video id="remoteStream" width="300" controls></video>
+        <br /><br />
+        <input type="text" id="remoteId" value="" placeholder="remote id" />
+        <button type="button" id="btnCall" onclick="OpenCall()">Call</button>
+    </div>
+    <div id="div-dang-ky">
+        <br /><br />
+        <input type="text" id="txtUsername" placeholder="enter your username" />
+        <button id="btnSignUp">Sing Up</button>
+    </div>
+</body>
+<script src="main.js"></script>
+
+</html>
