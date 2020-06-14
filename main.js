@@ -2,6 +2,25 @@ const socket = io("https://stream012020.herokuapp.com/");
 
 $("#div-chat").hide();
 
+let customConfig;
+$.ajax({
+    url: "https://service.xirsys.com/ice",
+    data: {
+        ident: "redone",
+        secret: "15bbd1a2-adf3-11ea-9d39-0242ac150003",
+        domain: "IBautistaP.github.io",
+        application: "default",
+        room: "default",
+        secure: 1
+    },
+    success: function(data, status) {
+        //data.d is where the iceServers object lives
+        customConfig = data.d;
+        console.log(customConfig);
+    },
+    async: false
+});
+
 socket.on("DANH_SACH_ONLINE", arrUserInfo => {
     $("#div-chat").show();
     $("#div-dang-ky").hide();
@@ -46,7 +65,8 @@ var peer = new Peer({
     //   key: "peerjs",
     host: "9000-da81e955-7114-46f0-840f-ae25b4d1ce1f.ws-us02.gitpod.io",
     secure: true,
-    port: 443
+    port: 443,
+    config: customConfig
 });
 
 peer.on("open", id => {
