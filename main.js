@@ -41,6 +41,7 @@ function playStream(idVideoTag, stream) {
 //     secure: true,
 //     port: 443
 // });
+
 var peer = new Peer({
     key: "peerjs",
     host: "https://9000-da81e955-7114-46f0-840f-ae25b4d1ce1f.ws-us02.gitpod.io/",
